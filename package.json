@@ -1,0 +1,12 @@
+{
+    "name": "aoc",
+    "scripts": {
+        "dev": "tsc -w"
+    },
+    "dependacies": {},
+    "private": true,
+    "dependencies": {
+        "typescript": "^4.9.4"
+    },
+    "type": "module"
+}
