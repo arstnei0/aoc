@@ -6,18 +6,11 @@ const answer = input
     // Now proccessed from string to list of numbers
     .map((pair, i, list) => {
     let contains = false;
-    pair.forEach((elf) => {
-        list.forEach((pair, _i) => {
-            if (_i === i)
-                return;
-            pair.forEach((elfc) => {
-                if (elfc[0] >= elf[0] && elfc[1] <= elf[1])
-                    contains = true;
-            });
-        });
-    });
+    if ((pair[0][0] >= pair[1][0] && pair[0][1] <= pair[1][1]) ||
+        (pair[1][0] >= pair[0][0] && pair[1][1] <= pair[0][1]))
+        contains = true;
     return contains;
 })
     // got an array of boolean
-    .reduce((prev, curr) => curr ? prev + 1 : prev, 0);
+    .reduce((prev, curr) => (curr ? prev + 1 : prev), 0);
 console.log(answer);
